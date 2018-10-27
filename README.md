@@ -1,4 +1,4 @@
-# Spartan-Messenger-using-gRPC
+# Spartan-Messenger-using-gRPC :speech_balloon:
 
 This repository is to build a bidirectional chat application, a Spartan Messenger, using GRPC in Python3. We want to use gRPC response streaming to continuously receive chat messages from the Spartan server.
 
@@ -14,6 +14,8 @@ __gRPC__ is a modern, open source, high-performance remote procedure call (RPC) 
     <td><a href="https://github.com/grpc">github.com/grpc</a></td>
   </tr>
 </table>
+
+________
 
 > A response-streaming RPC where the client sends a request to the server and gets a stream to read a sequence of messages back. The client reads from the returned stream until there are no more messages. As you can see in the example, you specify a response-streaming method by placing the stream keyword before the response type.
 // Obtains the Features available within the given Rectangle.  Results are
