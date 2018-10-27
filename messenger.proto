@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package grpc;
+
+message Empty {}
+
+message User {
+    string name = 1;
+    string othername = 2;
+}
+
+message Usr {
+    string name = 1;
+}
+
+message Msg {
+    string name = 1;
+    string othername = 2;
+    bytes nonce = 3;
+    bytes ciphertext = 4;
+    bytes tag = 5;
+}
+
+message Connection {
+    bool successful = 1;
+}
+
+message WarningMsg {
+    string warning = 1;
+}
+
+service ChatServer {
+    rpc SendMessage (Msg) returns (stream WarningMsg);
+    rpc ChatStream (User) returns (stream Msg);
+    rpc UsersOnline (Empty) returns (stream Usr);
+    rpc CreateConnection (User) returns (Connection);
+    rpc CheckMessageList (Usr) returns (Usr);
+}
